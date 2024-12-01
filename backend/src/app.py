@@ -32,13 +32,12 @@ def login():
 
 
 @app.route('/new_user', methods=['POST'])
-def login():
+def newUser():
     try:
         
-        dataUser = request.json  # Recibe los datos como JSON
-        email = dataUser.get('email')
-        password = dataUser.get('password')
-        return jsonify({"ESTO ES LO QUE QUIERO METER": dataUser})
+        # SEGUIR HACIENDO ESTO PARA DAR DE ALTA A LA BBDD
+        dataUser = request.json  
+        return jsonify(dataUser)
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
